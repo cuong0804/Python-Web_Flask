@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thông tin sách </title>
+</head>
+<body>
+    <h1>All Books</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Mã sách </th>
+                <th>Tên sách</th>
+                <th>Tác giả</th>
+                <th>Năm xuất bản</th>
+                <th>Thể loại</th>
+                <th>Sô lượng còn lại</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book[0] }}</td>
+                <td>{{ book[1] }}</td>
+                <td>{{ book[2] }}</td>
+                <td>{{ book[3] }}</td>
+                <td>{{ book[4] }}</td>
+                <td>{{ book[5] }}</td>
+                <td>{{ book[6] }}</td>
+                <td>
+                    <a href="/book/{{ book[0] }}">Xem chi tiết</a> |
+                    <a href="/book/{{ book[0] }}/edit">Sửa</a> |
+                    <form action="/book/{{ book[0] }}/delete" method="post" onsubmit="return confirm('Bạn có chắc muốn xóa?');">
+                        <input type="submit" value="Xóa">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/add_book">Thêm mới</a>
+    <a href="/">Quay lại</a>
+</body>
+</html>

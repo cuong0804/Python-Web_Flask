@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách độc giả</title>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Danh sách độc giả</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Họ và tên </th>
+                <th>Tuổi</th>
+                <th>Email</th>
+                <th>Sách đang mượn</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reader_info in reader %}
+            <tr>
+                <td>{{ reader_info[0] }}</td>
+                <td>{{ reader_info[2] }}</td>
+                <td>{{ reader_info[3] }}</td>
+                <td>{{ reader_info[4] }}</td>
+                <td>{{ reader_info[5] }}</td>
+                <td>
+                    <a href="">Xem chi tiết</a> |
+                    <a href="">Sửa</a> |
+                    <form action="" method="post" onsubmit="return confirm('Bạn có chắc muốn xóa?');">
+                        <input type="submit" value="Xóa">
+                    </form>
+                    
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="">Thêm mới</a>
+</body>
+</html>
