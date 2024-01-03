@@ -32,7 +32,7 @@ def index():
 @app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Xác thực tài khoản ở đây (thường từ cơ sở dữ liệu)
+        
         if request.form['username'] == 'admin' and  request.form['password'] == '123456':
             session['logged_in'] = True
             return redirect(url_for('index'))
