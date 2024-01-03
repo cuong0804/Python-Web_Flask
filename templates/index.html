@@ -1,17 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
     <title>Trang chủ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #7FFFD4;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #222;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #eee;
+            color: #000;
+        }
+        .sub_menu {
+            display: none;
+            position: absolute;
+            background: #7FFFD4;
+            width: 120px;
+            left: 0;
+            top: 40px; /* Adjust the positioning */
+        }
+        nav ul li:hover .sub_menu {
+            display: block;
+        }
+        .sub_menu li {
+            display: block;
+            margin: 0;
+        }
+        .sub_menu li a {
+            color: #222;
+            padding: 10px 20px;
+            display: block;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+        .sub_menu li a:hover {
+            background-color: #eee;
+            color: #000;
+        }
+    </style>
 </head>
 <body>
-    <h1>Trang chủ</h1>
-    <ul>
-        
-        <li><a href="/all_books">Danh mục sách</a></li>
-        <li><a href="/readers">Danh mục độc giả</a></li>
-        <li><a href="/books">Danh mục sách quản lý  mượn</a></li>
-      
+    <header>
+        <h1>Thư Viện </h1>
+    </header>
 
-    </ul>
+    <nav>
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="/all_books"> Sách</a></li>
+            <li>
+                <a href="/books">Quản lý mượn</a>
+                <ul class="sub_menu">
+                    <li><a href="#">Submenu 1</a></li>
+                    <li><a href="#">Submenu 2</a></li>
+                </ul>
+            </li>
+            <li><a href="/readers">Danh mục độc giả</a></li>
+            <li><a href="#">Liên hệ </a></li>
+        </ul>
+    </nav>
 </body>
 </html>
